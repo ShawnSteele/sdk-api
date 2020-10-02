@@ -89,7 +89,7 @@ Flag specifying the type of transformation to use during string mapping or the t
 |**LCMAP_HALFWIDTH** | Use narrow characters where applicable. This flag and LCMAP_FULLWIDTH are mutually exclusive. |
 | **LCMAP_HIRAGANA** | Map all katakana characters to hiragana. This flag and LCMAP_KATAKANA are mutually exclusive. |
 | **LCMAP_KATAKANA** | Map all hiragana characters to katakana. This flag and LCMAP_HIRAGANA are mutually exclusive. |
-| **LCMAP_LINGUISTIC_CASING** | Use linguistic rules for casing, instead of file system rules (default). This flag is valid with LCMAP_LOWERCASE or LCMAP_UPPERCASE only. |
+| **LCMAP_LINGUISTIC_CASING** | Use linguistic rules for casing, instead of file system rules (file system is default). Linguistic rules handle variances like the Turkish-i. This flag is valid with LCMAP_LOWERCASE or LCMAP_UPPERCASE only. |
 | **LCMAP_LOWERCASE** | For locales and scripts capable of handling uppercase and lowercase, map all characters to lowercase.
 | **LCMAP_HASH** | Return a hash of the raw sort weights of a string.<br> <br>Strings that appear equivalent typically return the same hash (for example, "hello" and "HELLO" with LCMAP_IGNORECASE). However, some complex cases, such as East Asian languages, can have similar strings with identical weights that compare as equal but do not return the same hash.<br> <br>LCMAP_HASH requires that the output buffer be of size sizeof(int) |
 | **LCMAP_SIMPLIFIED_CHINESE** | Map traditional Chinese characters to simplified Chinese characters. This flag and LCMAP_TRADITIONAL_CHINESE are mutually exclusive. |
@@ -200,7 +200,7 @@ Ignore the difference between half-width and full-width characters, for example,
 </dl>
 </td>
 <td width="60%">
-Use linguistic rules for casing, instead of file system rules (default).
+Use linguistic rules for casing, instead of file system rules (file system rules are default). This is necessary for proper handling of characters like the Turkish i.
 
 </td>
 </tr>
